@@ -1,0 +1,6 @@
+- name: add ssh key for Jack
+  authorized_key:
+    user: Jack
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKhleAyDY5Ewa8fz81AqmJJed/dO2yWi6w9neX+NooCU Ansible"
+
+
