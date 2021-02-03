@@ -18,6 +18,29 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu"   
 
+- hosts: all
+  become: true
+  tasks:
+  - name: create user Jack
+    tags: always
+    user:
+      name: Jack
+      groups: root
+
+  - name: add ssh key for Jack
+    tags: always
+    authorized_key:
+      user: Jack
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKhleAyDY5Ewa8fz81AqmJJed/dO2yWi6w9neX+NooCU Ansible"
+
+  - name: add sudoers file for Jack
+    tags: always
+    copy:
+      src: sudoer_Jack
+      dest: /etc/sudoers.d/Jack
+      owner: root
+      group: root
+  
 - hosts: workstations
   become: true
   tasks:
