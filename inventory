@@ -9,4 +9,7 @@ osboxes@192.168.0.74
 [file_servers]
 192.168.0.83
 
+[workstations]
+osboxes@192.168.0.74
+
 
